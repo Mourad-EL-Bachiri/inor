@@ -1,0 +1,211 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10;
+    font-family: sans-serif;
+}
+a{
+    text-decoration: none;
+}
+
+.container {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+section{
+    margin-bottom: auto;
+}
+
+/* Inor section */
+/* Background video */
+
+
+#video{
+    position: absolute;
+    /* width: 99.99%; */
+    max-width: max-content;
+    min-height: max-content;
+   
+} 
+
+@media (min-aspect-ratio: 16/9) {
+    #video{
+        position: absolute;
+        width:100%;
+        height: auto ;
+    }
+    @media (max-height: 800px) {
+        #video-div{
+          margin-bottom: 200px;
+        }
+    }
+    @media screen and (max-height: 600px) {
+        #video-div{
+            margin-bottom: 300px;
+        }
+    }
+    @media screen and (max-height: 500px) {
+        #video-div{
+            margin-bottom: 400px;
+        }
+    }
+
+}
+@media (max-aspect-ratio: 16/9) {
+    #video { 
+        position: absolute;
+        width:auto;
+        height: 100%;
+    }
+}
+
+/*
+@media (max-width: 767px) {
+   
+    body {
+        background: url(/assets/imgs/video.png);
+        background-size: cover;
+    }
+}
+
+/*===================1*/
+
+
+#position{
+    position: -ms-page;
+}
+
+#inor { 
+    background-image: url(/assets/imgs/video.mp4);
+    
+}
+#inor::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: max-content;
+    width: 100%;
+    background-color: black;
+    opacity: .7;
+    z-index: 0;
+}
+
+#inor .inor{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 50px;
+    justify-content: flex-start;
+
+}
+
+#inor h1{
+    display: block;
+    width: fit-content;
+    font-size: 4rem;
+    position: relative;
+    color: transparent;
+    text-transform: uppercase;
+    animation: text_reveal .5s ease forwards;
+    animation-delay: 1s;
+}
+#inor h1:nth-child(1){
+    animation-delay: 1s;
+}
+#inor h1:nth-child(2){
+    animation-delay: 2s;
+}
+#inor h1:nth-child(3){
+    animation-delay: 3s;
+}
+#inor h1:nth-child(4){
+    animation: text_reveal2 .5s ease forwards;
+    animation-delay: 4s;
+}
+
+#inor h1 span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background-color: crimson;
+    animation: text_reveal_box 1s ease;
+    animation-delay: .3s;
+}
+#inor h1 div{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background-color: yellow;
+    animation: text_reveal_box 1s ease;
+    animation-delay: .3s;
+}
+
+#inor h1:nth-child(1) div{
+    animation-delay: .5s;
+}
+#inor h1:nth-child(2) span{
+    animation-delay: 1.5s;
+}
+#inor h1:nth-child(3) span{
+    animation-delay: 2.5s;
+}
+#inor h1:nth-child(4) span{
+    animation-delay: 3.5s;
+}
+
+
+
+#inor .btn1{
+    display: inline-block;
+    padding: 10px 30px;
+    color: white;
+    background-color: transparent;
+    border: 2px solid crimson;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    margin-top: 30px;
+    transition: .3s ease;
+    transition-property: background-color, color;
+}
+#inor .btn1:hover{
+    color: white;
+    background-color: crimson;
+}
+
+/* End inor section */
+/* keyframes */
+@keyframes text_reveal_box{
+    50%{
+        width: 100%;
+        left: 0;
+    }
+    100%{
+        width: 0;
+        left: 100%;
+    }
+}
+@keyframes text_reveal{
+    100%{
+        color: white;
+    }
+}
+@keyframes text_reveal2{
+    100%{
+        color: yellow;
+        font-style: oblique;
+    }
+}
+/*End keyframes */

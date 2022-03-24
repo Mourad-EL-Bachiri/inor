@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    
+    <section class="hero is-fullheight">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <div class="column is-4 is-offset-4">
+                    <div class="box">
+                        <p class="subtitle is-2">Welcome Back</p>
+                        <br />
+                        <form [formGroup] = "loginForm" (ngSubmit)="login()">
+                            <div class="field">
+                                <p class="control has-icons-left has-icons-right">
+                                    <input formControlName="email" class="input is-medium" type="email" placeholder="Email" id="email"/>
+                                    <span class="icon is-medium is-left">
+                                        <i class="fas fa-envelope"></i>
+                                    </span>
+                                </p>
+                                <div *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.touched) || loginForm.get('email')?.dirty">
+                                    <div *ngIf="loginForm.get('email')?.getError('required')" class="alert alert-dismissible alert-danger">Ce champ est
+                                        obligatoire</div>
+                                    <div *ngIf="loginForm.get('email')?.getError('email')" class="alert alert-dismissible alert-danger">Votre input ne
+                                        respect pas format email</div>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <p class="control has-icons-left">
+                                    <input formControlName="password" class="input is-medium" type="password" placeholder="Password" id="password"/>
+                                    <span class="icon is-small is-left">
+                                        <i class="fas fa-lock"></i>
+                                    </span>
+                                </p>
+                                <div
+                                    *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.touched) || loginForm.get('password')?.dirty">
+                                    <div *ngIf="loginForm.get('password')?.getError('required')" class="alert alert-dismissible alert-danger">Ce champ
+                                        est obligatoire</div>
+                                    <div *ngIf="loginForm.get('password')?.getError('minlength')" class="alert alert-dismissible alert-danger">Faible
+                                        Mot de passe! essayez avec 6 caractere minimum</div>
+                                </div>
+                            </div>
+                            <button [disabled]="loginForm?.invalid" class="button is-block is-info is-large is-fullwidth">Login</button><br />
+                        </form>
+                    </div>
+                    <p class="has-text-grey">
+                        <a href="#">Sign Up</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
