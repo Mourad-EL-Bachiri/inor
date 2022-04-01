@@ -1,15 +1,17 @@
-import { AccountService } from './../../services/account.service';
+import { Validators, FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AccountService } from './../../services/account.service';
 import { TokenService } from './../../services/token.service';
 import { AuthService } from './../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
+
 })
+
 export class LoginComponent implements OnInit {
 
   loginForm = new FormGroup({

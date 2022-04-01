@@ -10,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  currentUser: null;
+  currentUser: any = null
 
   constructor(
     private router: Router,
